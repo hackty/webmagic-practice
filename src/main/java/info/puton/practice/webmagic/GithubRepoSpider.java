@@ -8,7 +8,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 /**
  * Created by taoyang on 2016/10/13.
  */
-public class GithubRepoPageProcessor implements PageProcessor {
+public class GithubRepoSpider implements PageProcessor {
 
     // 部分一：抓取网站的相关配置，包括编码、抓取间隔、重试次数等
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
@@ -33,7 +33,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new GithubRepoPageProcessor())
+        Spider.create(new GithubRepoSpider())
                 //从"https://github.com/code4craft"开始抓
                 .addUrl("https://github.com/code4craft")
                         //开启5个线程抓取
