@@ -53,12 +53,9 @@ public class IfhugSpider implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new IfhugSpider())
-                //从"https://github.com/code4craft"开始抓
                 .addUrl("http://ifhug.com/forum-66-1.html")
                 .addPipeline(new IfhugPipeline())
-                        //开启5个线程抓取
                 .thread(5)
-                        //启动爬虫
                 .run();
     }
 
